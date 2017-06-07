@@ -1,0 +1,38 @@
+---
+title: "si_w4"
+author: "Arturo Garcia"
+date: "7/6/2017"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+lambda <- 0.2
+
+simulations <- matrix(rexp(40000,lambda), ncol = 40)
+
+averages <- rowMeans(simulations)
+
+sample_mean <- mean(averages)
+sample_sd <- sd(averages)
+
+hist(rexp(1000,lambda))
+
+hist(averages)
+```
+
+#Part 2 
+
+```{r}
+data(ToothGrowth)
+?ToothGrowth
+
+with(ToothGrowth, t.test(len ~ supp))
+
+head(ToothGrowth)
+str(ToothGrowth)
+```
+
